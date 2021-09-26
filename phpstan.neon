@@ -1,0 +1,15 @@
+# Warning: phpstan.neon uses tabs and not spaces
+parameters:
+	level: 8
+	parallel:
+		# more than one thread uses lots of ram, keep at 1 for now
+		maximumNumberOfProcesses: 2
+		processTimeout: 120.0
+	tmpDir: var/phpstan/tmp
+	paths:
+		- src
+		- tests\phpstan
+	excludes_analyse:
+	bootstrapFiles:
+	scanFiles:
+	ignoreErrors:
