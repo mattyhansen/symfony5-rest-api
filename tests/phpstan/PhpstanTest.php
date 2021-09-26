@@ -14,7 +14,7 @@ class PhpstanTest
     /**
      *
      */
-    public static function php74Testing()
+    public static function php74Testing(): void
     {
 
 
@@ -23,7 +23,7 @@ class PhpstanTest
          */
         $year         = new \DateTime('3 year ago');
         $now          = new \DateTime();
-        $isWithinYear = ($now->format('U') - $year->format('U')) > 0;
+//        $isWithinYear = ($now->format('U') - $year->format('U')) > 0;
 
 
         /**
@@ -41,8 +41,8 @@ class PhpstanTest
          */
         $formData = null;
         // using null as array causes error with php 7.4
-        $timestamp = $formData['timestamp'];
-        echo $timestamp;
+//        $timestamp = $formData['timestamp'];
+//        echo $timestamp;
 
     }
 
