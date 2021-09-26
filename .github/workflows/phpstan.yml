@@ -1,0 +1,40 @@
+name: phpstan
+
+on: [push]
+
+jobs:
+    phpstan:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: php-actions/composer@v5
+
+            - name: PHPStan Static Analysis
+              uses: php-actions/phpstan@v3
+          with:
+              # What version of PHPStan to use
+              #version: # optional, default is latest
+              # What version of PHP to use
+              php_version: "7.4"
+              # Space separated list of extensions to configure with the PHP build
+              #php_extensions: # optional
+              # The command to run (analyse [default], clear-result-cache, dump-deps, help, list, worker)
+              #command: # default is analyse
+              # Path(s) with source code to run analysis on
+              #path:
+              # Configuration file location
+              configuration: "phpstan.neon"
+              # Level of rule options - the higher, the stricter
+              #level: # optional
+              # Path to a file with a list of paths to run analysis on
+              #paths_file: # optional
+              # Project's additional autoload file path
+              #autoload_file: # optional
+              # Format in which to print the result of the analysis
+              #error_format: # optional
+              # Path to a file where the baseline should be saved
+              #generate_baseline: # optional
+              # Memory limit for analysis
+              #memory_limit: # optional
+              # Extra arguments to pass to the phpstan binary
+              #args: # optional
